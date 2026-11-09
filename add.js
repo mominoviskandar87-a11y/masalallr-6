@@ -44,9 +44,34 @@ function getProductsCount(arr){
 console.log(getProductsCount(products));
 
 
-function getProductById(id){
-    
+function getProductById(id) {
+  for (const product of products) {
+    if (product.id === id) {
+      return product;
+    }
+  }
+
+  return "Product not found";
 }
+console.log(getProductById(99));
+console.log(getProductById(9));
+
+
+
+function getExpensiveProducts() {
+  const result = [];
+
+  for (const product of products) {
+    if (product.price > 10000000) {
+      result.push(product);
+    }
+  }
+
+  return result;
+}
+console.log(getExpensiveProducts());
+
+
 
 
 
